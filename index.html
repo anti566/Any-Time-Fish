@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Any Time Fish | Ocean Fresh Seafood Delivered Daily</title>
+    <meta name="description" content="Premium fresh fish and seafood supplier. Sourced daily, delivered any time to your home or restaurant. 100% sustainable and fresh.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Any Time Fish | Ocean Fresh Seafood Delivered Daily">
+    <meta property="og:description" content="Premium fresh fish and seafood supplier. Sourced daily, delivered any time.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap');
+
+        :root {
+            --primary: #0B2545;
+            --accent: #1D9E75;
+            --highlight: #EF9F27;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-light: #F9FAFB;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #178a66;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(29, 158, 117, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-highlight {
+            background-color: var(--highlight);
+            color: var(--white);
+        }
+
+        .btn-highlight:hover {
+            background-color: #d98b1e;
+            transform: translateY(-2px);
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0B2545 0%, #1D4E89 100%);
+            color: var(--white);
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .wave-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            animation: waveAnimate 10s linear infinite;
+        }
+
+        @keyframes waveAnimate {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1440px; }
+        }
+
+        /* Why Choose Us */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .value-card svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .value-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Menu */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: scale(1.03);
+            border-color: var(--accent);
+        }
+
+        .product-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            margin-top: auto;
+        }
+
+        /* How it works */
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            position: relative;
+        }
+
+        .how-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .stars {
+            color: var(--highlight);
+            margin-bottom: 1rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .user-info font-bold {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Banner */
+        .delivery-banner {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-radius: 20px;
+            margin: 4rem 1.5rem;
+        }
+
+        .delivery-banner h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        /* Footer */
+        footer {
+            background: #050f1d;
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links svg:hover {
+            fill: var(--accent);
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 999;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-ctas { flex-direction: column; }
+            .hero { height: auto; padding: 4rem 0; }
+            .section-header h2 { font-size: 2rem; }
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            padding: 2rem;
+            box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+            display: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Nav -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.34 3.66a5 5 0 0 1 1.48 3.51V10c0 3.32-2.68 6-6 6H13c-2.76 0-5-2.24-5-5V4.66a5 5 0 0 1 5-5h2.86a5 5 0 0 1 3.48 4Z"/><path d="M5.5 15.5l-3 3"/><path d="M22 22l-3-3"/><path d="M7 6l-3.5 3.5"/><path d="M20.5 9.5L17 13"/></svg>
+                Any Time Fish
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn btn-primary">Order Now</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary">Order Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 class="reveal">Ocean Fresh.<br>Delivered Any Time.</h1>
+            <p class="reveal">Premium fish and seafood, sourced daily from the best harbors — for your gourmet home cooking or professional restaurant kitchen.</p>
+            <div class="hero-ctas reveal">
+                <a href="#menu" class="btn btn-primary">See Our Menu</a>
+                <a href="tel:+1234567890" class="btn btn-secondary" style="background:transparent; color:white; border-color:white;">Call to Order</a>
+            </div>
+            <div class="trust-badges reveal">
+                <div class="badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    Daily Fresh
+                </div>
+                <div class="badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    100% Sustainable
+                </div>
+                <div class="badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    Fast Delivery
+                </div>
+            </div>
+        </div>
+        <div class="wave-bg"></div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Why Any Time Fish?</h2>
+                <p>We pride ourselves on the quality and reliability of our service.</p>
+            </div>
+            <div class="value-grid">
+                <div class="value-card reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <h3>Freshness Guaranteed</h3>
+                    <p>From the ocean to your doorstep in record time. We never compromise on temperature control.</p>
+                </div>
+                <div class="value-card reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <h3>Flexible Ordering</h3>
+                    <p>Order midnight or early morning. We operate 24/7 to ensure you get what you need, when you need it.</p>
+                </div>
+                <div class="value-card reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <h3>Home & Business</h3>
+                    <p>Whether you're a home cook or a Michelin-star chef, we have the right portions and pricing for you.</p>
+                </div>
+                <div class="value-card reveal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <h3>Best Value</h3>
+                    <p>Direct sourcing means less middle-men and better prices for premium quality fish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu -->
+    <section class="section-padding" id="menu" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Today's Fresh Catch</h2>
+                <p>Order before 10am for same-day delivery. Limited stock available daily.</p>
+            </div>
+            <div class="menu-grid">
+                <div class="product-card reveal">
+                    <div style="height: 200px; background: #ddd; border-radius: 10px; margin-bottom: 1.5rem; background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=400'); background-size:cover;"></div>
+                    <h4>Hilsa (Ilish)</h4>
+                    <p>The King of fish. Freshly caught from Padma-Meghna delta. Known for its buttery texture and unique aroma.</p>
+                    <div class="product-price">From ₹1,200/kg</div>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20order%20Hilsa" class="btn btn-primary">Order This</a>
+                </div>
+                <div class="product-card reveal">
+                    <div style="height: 200px; background: #ddd; border-radius: 10px; margin-bottom: 1.5rem; background-image:url('https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&q=80&w=400'); background-size:cover;"></div>
+                    <h4>Rohu</h4>
+                    <p>Premium river Rohu. Perfect for traditional curries. Sold whole or expertly cleaned and cut.</p>
+                    <div class="product-price">From ₹350/kg</div>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20order%20Rohu" class="btn btn-primary">Order This</a>
+                </div>
+                <div class="product-card reveal">
+                    <div style="height: 200px; background: #ddd; border-radius: 10px; margin-bottom: 1.5rem; background-image:url('https://images.unsplash.com/photo-1514516311115-37ce9f3908f5?auto=format&fit=crop&q=80&w=400'); background-size:cover;"></div>
+                    <h4>Tiger Prawns</h4>
+                    <p>Jumbo sized, succulent Tiger Prawns. Sourced from sustainable coastal farms. Hand-selected for quality.</p>
+                    <div class="product-price">From ₹850/kg</div>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20order%20Tiger%20Prawns" class="btn btn-primary">Order This</a>
+                </div>
+                <div class="product-card reveal">
+                    <div style="height: 200px; background: #ddd; border-radius: 10px; margin-bottom: 1.5rem; background-image:url('https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&q=80&w=400'); background-size:cover;"></div>
+                    <h4>Pomfret</h4>
+                    <p>Silver Pomfret. Delicate white meat with a mild flavor. Excellent for frying or grilling whole.</p>
+                    <div class="product-price">From ₹750/kg</div>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20order%20Pomfret" class="btn btn-primary">Order This</a>
+                </div>
+                <div class="product-card reveal">
+                    <div style="height: 200px; background: #ddd; border-radius: 10px; margin-bottom: 1.5rem; background-image:url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=400'); background-size:cover;"></div>
+                    <h4>Salmon Fillet</h4>
+                    <p>Sashimi grade Atlantic Salmon. Rich in Omega-3. Imported weekly to ensure maximum freshness.</p>
+                    <div class="product-price">From ₹1,800/kg</div>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20order%20Salmon" class="btn btn-primary">Order This</a>
+                </div>
+                <div class="product-card reveal">
+                    <div style="height: 200px; background: #ddd; border-radius: 10px; margin-bottom: 1.5rem; background-image:url('https://images.unsplash.com/photo-1544551763-8dd44758c2dd?auto=format&fit=crop&q=80&w=400'); background-size:cover;"></div>
+                    <h4>Catla</h4>
+                    <p>Large freshwater Catla. Sweet taste and soft texture. Preferred for festive Bengali dishes.</p>
+                    <div class="product-price">From ₹400/kg</div>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20order%20Catla" class="btn btn-primary">Order This</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Ordering Made Easy</h2>
+                <p>Three simple steps to the freshest meal of your life.</p>
+            </div>
+            <div class="how-grid">
+                <div class="how-step reveal">
+                    <div class="step-number">1</div>
+                    <h4>Choose Your Fish</h4>
+                    <p>Browse our daily catch menu and select your favorites.</p>
+                </div>
+                <div class="how-step reveal">
+                    <div class="step-number">2</div>
+                    <h4>Place Your Order</h4>
+                    <p>WhatsApp us or call directly to confirm price and quantity.</p>
+                </div>
+                <div class="how-step reveal">
+                    <div class="step-number">3</div>
+                    <h4>We Deliver Fresh</h4>
+                    <p>Sit back as our express cold chain delivery brings the ocean to you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding" style="background-color: var(--primary); color: white;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 style="color: white;">What Our Customers Say</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p style="color: var(--text-dark);">"The Hilsa I ordered was exceptionally fresh. It felt like it was just pulled from the water. Delivery was right on time for our dinner party!"</p>
+                    <div class="user-info">
+                        <div class="font-bold">Ananya Sharma</div>
+                        <div style="color: var(--text-light); font-size: 0.8rem;">Home Maker</div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p style="color: var(--text-dark);">"As a ресторан owner, quality is everything. Any Time Fish has been my most reliable supplier for 2 years now. Their Tiger Prawns are world-class."</p>
+                    <div class="user-info">
+                        <div class="font-bold">Chef Marco</div>
+                        <div style="color: var(--text-light); font-size: 0.8rem;">Restaurant Owner</div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p style="color: var(--text-dark);">"Ordered Salmon at 11 PM, received it by 10 AM the next day. The packaging was top-notch with dry ice. Highly recommended for busy people!"</p>
+                    <div class="user-info">
+                        <div class="font-bold">Vikram Goel</div>
+                        <div style="color: var(--text-light); font-size: 0.8rem;">Tech Professional</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Banner -->
+    <div class="container reveal" id="delivery">
+        <div class="delivery-banner">
+            <h2>We Deliver to Your Doorstep — 7 Days a Week</h2>
+            <p style="margin-bottom: 2rem;">Same-day delivery for Delhi NCR, Mumbai, and Kolkata. Minimum order ₹500.</p>
+            <a href="#contact" class="btn btn-highlight">Check Delivery in Your Area</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Get in Touch</h3>
+                    <p style="margin-bottom: 2rem;">Ready to order? Contact us via any of the methods below. Our team is available 24/7 to assist with your seafood needs.</p>
+                    
+                    <div class="contact-detail">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <div>
+                            <strong>Call Us Any Time</strong><br>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7l.8.1"></path><path d="M16 5V3m0 2l2 2m-2-2l-2 2"></path></svg>
+                        <div>
+                            <strong>WhatsApp Order</strong><br>
+                            <a href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20place%20an%20order">Message on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <strong>Business Hours</strong>
+                        <table style="width: 100%; margin-top: 1rem; border-collapse: collapse;">
+                            <tr><td style="padding: 5px 0;">Monday - Sunday</td><td style="text-align: right;">6:00 AM - 11:00 PM</td></tr>
+                            <tr><td style="padding: 5px 0;">Ordering Lines</td><td style="text-align: right;">24 Hours</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div style="margin-top:2rem; width:100%; height:200px; background:#ddd; border-radius:10px; display:flex; align-items:center; justify-content:center;">
+                        [Google Maps Placeholder]
+                    </div>
+                </div>
+
+                <div class="contact-form reveal">
+                    <h3>Quick Inquiry</h3>
+                    <form id="fishForm">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label>What Fish Do You Need?</label>
+                            <input type="text" placeholder="e.g. 2kg Hilsa, 1kg Prawns" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Notes</label>
+                            <textarea rows="4" placeholder="Any specific cleaning or cutting requirements?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.34 3.66a5 5 0 0 1 1.48 3.51V10c0 3.32-2.68 6-6 6H13c-2.76 0-5-2.24-5-5V4.66a5 5 0 0 1 5-5h2.86a5 5 0 0 1 3.48 4Z"/><path d="M5.5 15.5l-3 3"/><path d="M22 22l-3-3"/><path d="M7 6l-3.5 3.5"/><path d="M20.5 9.5L17 13"/></svg>
+                        Any Time Fish
+                    </div>
+                    <p style="opacity: 0.7;">Premium fresh seafood supplier, bringing the ocean's best to your doorstep 24/7. Quality, Trust, and Freshness — every single time.</p>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;">Quick Links</h4>
+                    <ul style="opacity: 0.7; display: grid; gap: 0.8rem;">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Fresh Catch</a></li>
+                        <li><a href="#about">Why Us</a></li>
+                        <li><a href="#delivery">Delivery Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7l.8.1"></path><path d="M16 5V3m0 2l2 2m-2-2l-2 2"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;">
+            <p style="text-align: center; opacity: 0.5; font-size: 0.9rem;">&copy; 2026 Any Time Fish. All rights reserved. Sourced sustainably, delivered with love.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919876543210?text=I'd%20like%20to%20check%20today's%20fresh%20stock" class="whatsapp-float" aria-label="Order on WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 0 5.415 0 12.05c0 2.122.554 4.197 1.61 6.06L0 24l6.096-1.6c1.801 1.002 3.86 1.52 5.954 1.52 6.637 0 12.051-5.415 12.051-12.05 0-3.213-1.252-6.234-3.522-8.508z"/></svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // Form Submission
+        document.getElementById('fishForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! Our team will contact you shortly to confirm your order.');
+            this.reset();
+        });
+
+        // Smooth Scroll for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
